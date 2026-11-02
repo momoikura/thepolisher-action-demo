@@ -1,0 +1,13 @@
+name: ThePolisher
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+permissions:
+  pull-requests: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: momoikura/The-Polisher/action@main
+        with:
+          meta-api-key: ${{ secrets.META_API_KEY }}
